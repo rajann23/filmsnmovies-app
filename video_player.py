@@ -1,7 +1,5 @@
 import streamlit as st
-import moviepy.editor as mp
 import tempfile
-import os
 
 st.title("Movie Player")
 
@@ -16,11 +14,3 @@ if uploaded_file is not None:
 
     # Display the video
     st.video(temp_file_path)
-
-    # Optional: Display some basic info about the file
-    video_clip = mp.VideoFileClip(temp_file_path)
-    st.write(f"Duration: {video_clip.duration} seconds")
-    st.write(f"Resolution: {video_clip.size}")
-
-    # Delete the temporary file after displaying
-    os.remove(temp_file_path)
